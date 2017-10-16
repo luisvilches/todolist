@@ -19,34 +19,24 @@ const Tareas = new Schema({
             color:String
         }
     ],
-    attachment:String,// archivos adjuntos a la tarea,
+    attachment:[
+        {
+            file:String
+        }
+    ],
     addRoutes:[
         {
             link:String // link de rutas asociadas a la tarea
         }
     ],
-    metrics:{ // metricas
-        develop:{ // desarrollo
+    metrics:[
+        {
+            type:String,
             timeInit:Date,
             timeFin:Date,
             durationTask:String
-        },
-        qa:{ // qa del encargado de qa
-            timeInit:Date,
-            timeFin:Date,
-            durationTask:String
-        },
-        qaClient:{ // qa del cliente
-            timeInit:Date,
-            timeFin:Date,
-            durationTask:String
-        },
-        reloadCicle:[ // ciclos de cambios 
-            {
-                comment:String
-            }
-        ]
-    }
+        }
+    ]
 
 });
 

@@ -14,6 +14,8 @@ const authMidleware = require("./bin/middlewares/auth");
 app.use(express.static("public"));
 app.use(cors());
 
+process.env.TZ = "UTC-4";
+
 mongoose.connect(database.mlab, {
     useMongoClient: true,
   }, err => {
